@@ -4,7 +4,7 @@ After=local-fs.target network.target
 Requires=local-fs.target network.target
 
 [Service]
-ExecStart={{collectd_prefix_sbin}}/collectd -C {{collectd_prefix_conf}}/collectd.conf -f
+ExecStart={{collectd_sbin_path}}/collectd -C {{collectd_config_file}} -f
 Restart=always
 RestartSec=10
 StandardOutput=syslog

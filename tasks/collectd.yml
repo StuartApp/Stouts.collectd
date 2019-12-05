@@ -13,10 +13,19 @@
   when: collectd_use_ppa
   tags: [collectd, collectd-install]
 
-- import_tasks: install.deb.yml
-  when: not collectd_use_ppa and ansible_os_family == 'Debian'
+- import_tasks: install.src.yml
+  when:
+    - not collectd_use_ppa
+    - ansible_os_family == 'Debian'
+    - ansible_lsb.codename != "bionic"
   tags: [collectd, collectd-install]
 
+- import_tasks: install.deb.yml
+  when:
+    - ansible_os_family == 'Debian'
+    - ansible_lsb.codename == "bionic"
+
+  tags: [collectd, collectd-install]
 - import_tasks: configure.yml
   tags: [collectd, collectd-configure]
 

@@ -1,0 +1,10 @@
+---
+collectd_service: systemd
+collectd_use_ppa: false
+collectd_use_ppa_latest: false
+collectd_types_db_path: "/usr/share/collectd/types.db"
+collectd_additional_types_db_path: "/usr/share/collectd/additional-types.db"
+collectd_config_file: "/etc/collectd/collectd.conf"
+collectd_config_dir: "/etc/collectd/collectd.conf.d"
+collectd_plugins_dir: "/usr/lib/collectd"
+collectd_sbin_path: "/usr/sbin"
